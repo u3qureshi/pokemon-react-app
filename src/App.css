@@ -1,0 +1,57 @@
+html {
+  background: rgb(36, 0, 0);
+  background: url(images/background.webp) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+* {
+  font-family: "Raleway", sans-serif;
+}
+body {
+  background-color: transparent;
+}
+.main-container {
+}
+form {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+}
+form input {
+  font-size: 2.3vw;
+  padding: 1vw;
+  border-radius: 7px;
+  border: solid 1px yellow;
+  background: rgba(173, 216, 230, 0.7);
+}
+form input:hover {
+  transition: all ease-in-out 100ms;
+  opacity: 0.7;
+  border: solid 1px white;
+}
+form input:focus {
+  transition: all ease-in-out 100ms;
+  border: solid 1px white;
+  outline: none;
+}
+form input::placeholder {
+  color: white;
+}
+form button {
+  margin-right: 1vw;
+  padding: 1vw;
+  z-index: 100;
+  font-size: 2vw;
+  border-radius: 9px;
+  border: solid 1px yellow;
+  background: rgba(173, 216, 230, 0.7);
+}
+form button:hover {
+  cursor: pointer;
+  transition: all ease-in-out 100ms;
+  opacity: 0.7;
+  border: solid 1px white;
+}

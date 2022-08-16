@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "pokefont";
+  src: url(fonts/PokemonSolid.ttf) format("truetype");
+}
+* {
+  font-family: "Raleway", pokefont, Arial;
+}
+.pokemonNames {
+  padding: 0.5vw;
+  margin: 0.5vw;
+  width: 33vw;
+  text-align: center;
+  background: rgb(49, 49, 49);
+  justify-self: center;
+  align-self: center;
+  border-radius: 15px;
+  border: 2px solid black;
+  color: white;
+  font-family: pokefont, Arial;
+  font-size: 2vw;
+  font-weight: 100;
+  letter-spacing: 0.4vw;
+}
+.pokemonNames:hover {
+  background: rgb(140, 140, 140);
+  color: black;
+  cursor: pointer;
+  -webkit-transition: all 250ms ease-in-out;
+  -moz-transition: all 250ms ease-in-out;
+  -o-transition: all 250ms ease-in-out;
+  -ms-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  box-shadow: 0px 0px 2px 2px black;
+}
+
+.pokemonNamesContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+}

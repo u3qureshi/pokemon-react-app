@@ -1,0 +1,149 @@
+.copyright {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.3vw;
+  margin-bottom: 2px;
+}
+
+.fa {
+  padding-left: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+
+/* Add a hover effect if you want */
+
+.fa:hover {
+  color: rgb(55, 55, 55);
+  transition: 0.5s;
+  transform: scale(1.4);
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container button {
+  display: flex;
+  border-radius: 5%;
+  background-color: red;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 130px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin: 2vw;
+  margin-inline: 3vw;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.button-container button span {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  transition: 0.5s;
+  color: white;
+}
+
+.button-container button span:after {
+  content: "\00bb";
+  color: white;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+.button-container button:hover {
+  border: 0.1vw solid black;
+}
+
+.button-container button:hover span {
+  padding-right: 25px;
+}
+
+.button-container button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*previous button*/
+.button-container .previous-button {
+  display: flex;
+  border-radius: 5%;
+  background-color: red;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 130px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin: 2vw;
+  margin-inline: 3vw;
+  font-weight: 900;
+}
+
+.button-container .previous-button span {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  transition: 0.5s;
+  color: white;
+}
+
+.button-container .previous-button span:after {
+  content: "\00ab";
+  color: white;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+.button-container .previous-button:hover {
+  border: 0.1vw solid black;
+}
+
+.button-container .previous-button:hover span {
+  padding-right: 25px;
+}
+
+.button-container .previous-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/*disabled button*/
+.button-container button:disabled,
+.button-container button[disabled] {
+  background: transparent;
+  cursor: default;
+  border: none;
+}
+.button-container button:disabled:hover,
+.button-container button[disabled] {
+  border: none;
+  cursor: default;
+}
+.button-container button:disabled:hover span,
+.button-container button[disabled] {
+  border: none;
+  cursor: default;
+}
+.button-container button:disabled:hover span:after,
+.button-container button[disabled] {
+  border: none;
+  cursor: default;
+}
