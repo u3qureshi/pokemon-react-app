@@ -29,6 +29,7 @@ function App() {
   const [pokemonNumber, setPokemonNumber] = useState("");
   const [pokemonDescription, setPokemonDescription] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [tempName, setTempName] = useState("");
 
   /** SECTION FOR THE SECOND API CALL FOR A SPECIFIC POKEMON */
   const getPokemon = async () => {
@@ -45,9 +46,19 @@ function App() {
         setPokemonImg(res.data.sprites.other.dream_world.front_default);
         setPokemonNumber(String(res.data.id).padStart(3, "0"));
         setErrorMessage("");
+        // change border color after successful query
+        document.querySelector("#query").style.border =
+          "1.5px solid lightgreen";
+        setTimeout(() => {
+          document.querySelector("#query").style.border = "1.5px solid yellow";
+        }, 1700);
       })
       .catch((error) => {
         setErrorMessage("Please enter a correct Pokémon name.");
+        document.querySelector("#query").style.border = "1.5px solid red";
+        setTimeout(() => {
+          document.querySelector("#query").style.border = "1.5px solid yellow";
+        }, 1700);
       });
     axios
       .get(`https://pokeapi.co/api/v2/pokemon-species/${pokemon}`, {
@@ -74,8 +85,10 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setTempName(pokemon);
     getPokemon();
     setIsHomepage(false);
+    document.querySelector("#query").value = "";
   };
 
   //useEffect is a MUST for API calls.
@@ -146,7 +159,7 @@ function App() {
       />
       <PokemonCard
         isHomepage={isHomepage}
-        pokemon={pokemon.toUpperCase()}
+        pokemon={tempName.toUpperCase()}
         pokemonDescription={pokemonDescription.replace("", " ")}
         pokemonHeightM={pokemonHeightM}
         pokemonImg={pokemonImg}
