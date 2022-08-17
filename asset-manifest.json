@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pokemon-react-app/static/css/main.ba7f2022.css",
-    "main.js": "/pokemon-react-app/static/js/main.2b5b91fb.js",
+    "main.css": "/pokemon-react-app/static/css/main.0793f5fc.css",
+    "main.js": "/pokemon-react-app/static/js/main.5229470e.js",
     "static/media/blue-circle.png": "/pokemon-react-app/static/media/blue-circle.179dacf3f21c28cd26d8.png",
     "static/media/PokemonSolid.ttf": "/pokemon-react-app/static/media/PokemonSolid.5d60be1f7ff5fcc21fc1.ttf",
     "static/media/background.webp": "/pokemon-react-app/static/media/background.e867965ff6bf8c7bc515.webp",
     "index.html": "/pokemon-react-app/index.html",
-    "main.ba7f2022.css.map": "/pokemon-react-app/static/css/main.ba7f2022.css.map",
-    "main.2b5b91fb.js.map": "/pokemon-react-app/static/js/main.2b5b91fb.js.map"
+    "main.0793f5fc.css.map": "/pokemon-react-app/static/css/main.0793f5fc.css.map",
+    "main.5229470e.js.map": "/pokemon-react-app/static/js/main.5229470e.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba7f2022.css",
-    "static/js/main.2b5b91fb.js"
+    "static/css/main.0793f5fc.css",
+    "static/js/main.5229470e.js"
   ]
 }
