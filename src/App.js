@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import PokemonList from "./PokemonList";
 import PaginationFooter from "./PaginationFooter";
 import axios from "axios";
@@ -7,6 +7,8 @@ import PokedexHeader from "./PokedexHeader";
 import PokemonCard from "./PokemonCard";
 
 function App() {
+  const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
+
   // useState returns two variables in the form of an array which can be destructured
   const [pokemonNames, setPokemonNames] = useState([]);
   // currentPageUrl to track the page we are currently on
@@ -30,9 +32,10 @@ function App() {
   const [pokemonDescription, setPokemonDescription] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [tempName, setTempName] = useState("");
+  const [finalName, setFinalName] = useState("");
 
   /** SECTION FOR THE SECOND API CALL FOR A SPECIFIC POKEMON */
-  const getPokemon = async () => {
+  useEffect(() => {
     let cancel;
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`, {
@@ -46,6 +49,7 @@ function App() {
         setPokemonImg(res.data.sprites.other.dream_world.front_default);
         setPokemonNumber(String(res.data.id).padStart(3, "0"));
         setErrorMessage("");
+        setFinalName(pokemon);
         // change border color after successful query
         document.querySelector("#query").style.border =
           "1.5px solid lightgreen";
@@ -68,7 +72,8 @@ function App() {
         let description = res.data.flavor_text_entries[0].flavor_text;
         setPokemonDescription(description);
       });
-  };
+    return () => cancel();
+  }, [pokemon]);
 
   function getTypes(typesArray) {
     let newTypesArray = [];
@@ -80,14 +85,13 @@ function App() {
   }
 
   const handleChange = (e) => {
-    setPokemon(e.target.value.toLowerCase());
+    setTempName(e.target.value.toLowerCase());
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTempName(pokemon);
-    getPokemon();
     setIsHomepage(false);
+    setPokemon(tempName);
     document.querySelector("#query").value = "";
   };
 
@@ -133,6 +137,11 @@ function App() {
 
   if (loading) return <div className="load-sign">Loading...</div>;
 
+  // // Function to delay code momentarily
+  // function sleep(ms) {
+  //   return new Promise((resolve) => setTimeout(resolve, ms));
+  // } //use await sleep(ms);
+
   return (
     <div className="main-container">
       <form onSubmit={handleSubmit} id="form" role="search">
@@ -147,8 +156,17 @@ function App() {
           />
         </label>
       </form>
-      <PokedexHeader setIsHomepage={setIsHomepage} />
-      <PokemonList pokemonNames={pokemonNames} isHomepage={isHomepage} />
+      <PokedexHeader
+        setCurrentPageUrl={setCurrentPageUrl}
+        setIsHomepage={setIsHomepage}
+        isHomepage={isHomepage}
+      />
+      <PokemonList
+        setPokemon={setPokemon}
+        pokemonNames={pokemonNames}
+        isHomepage={isHomepage}
+        setIsHomepage={setIsHomepage}
+      />
       <PaginationFooter
         // FUNCTIONS BEING PASSED AS PROPS
         nextPageClicked={nextPageClicked}
@@ -159,7 +177,6 @@ function App() {
       />
       <PokemonCard
         isHomepage={isHomepage}
-        pokemon={tempName.toUpperCase()}
         pokemonDescription={pokemonDescription.replace("", " ")}
         pokemonHeightM={pokemonHeightM}
         pokemonImg={pokemonImg}
@@ -167,6 +184,7 @@ function App() {
         pokemonType={pokemonType}
         pokemonWeightKG={pokemonWeightKG}
         errorMessage={errorMessage}
+        pokemon={finalName.toUpperCase()}
       />
     </div>
   );
