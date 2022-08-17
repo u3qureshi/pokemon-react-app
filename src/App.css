@@ -21,7 +21,7 @@ form {
   right: 0;
 }
 form input {
-  font-size: 2.3vw;
+  font-size: 2vw;
   padding: 1vw;
   border-radius: 7px;
   border: solid 1px yellow;
@@ -36,15 +36,16 @@ form input:focus {
   transition: all ease-in-out 100ms;
   border: solid 1px white;
   outline: none;
+  background: rgba(173, 216, 230, 0.7);
 }
 form input::placeholder {
   color: white;
 }
 form button {
   margin-right: 1vw;
-  padding: 1vw;
+  padding: 0.7vw;
   z-index: 100;
-  font-size: 2vw;
+  font-size: 1.5vw;
   border-radius: 9px;
   border: solid 1px yellow;
   background: rgba(173, 216, 230, 0.7);
@@ -54,4 +55,15 @@ form button:hover {
   transition: all ease-in-out 100ms;
   opacity: 0.7;
   border: solid 1px white;
+}
+.load-sign {
+  background: rgba(71, 71, 71, 0.9);
+  margin: 5vw;
+  margin-top: 20vw;
+  padding: 2vw;
+  border-radius: 2vw;
+  text-align: center;
+  font-size: 3vw;
+  color: white;
+  font-weight: 900;
 }

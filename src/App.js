@@ -18,7 +18,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [previousIsNull, setPreviousIsNull] = useState(false);
   const [nextIsNull, setNextIsNull] = useState(false);
-  const [isHomepage, setIsHomepage] = useState(false);
+  const [isHomepage, setIsHomepage] = useState(true);
 
   // These 3 state variables are for the second API call for a specific pokemon
   const [pokemon, setPokemon] = useState("");
@@ -54,7 +54,7 @@ function App() {
         cancelToken: new axios.CancelToken((c) => (cancel = c)),
       })
       .then((res) => {
-        let description = res.data.flavor_text_entries[8].flavor_text;
+        let description = res.data.flavor_text_entries[0].flavor_text;
         setPokemonDescription(description);
       });
   };
@@ -75,6 +75,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     getPokemon();
+    setIsHomepage(false);
   };
 
   //useEffect is a MUST for API calls.
@@ -117,7 +118,7 @@ function App() {
     setCurrentPageUrl(previousPageUrl);
   }
 
-  if (loading) return "Loading...";
+  if (loading) return <div className="load-sign">Loading...</div>;
 
   return (
     <div className="main-container">
@@ -133,7 +134,7 @@ function App() {
           />
         </label>
       </form>
-      <PokedexHeader />
+      <PokedexHeader setIsHomepage={setIsHomepage} />
       <PokemonList pokemonNames={pokemonNames} isHomepage={isHomepage} />
       <PaginationFooter
         // FUNCTIONS BEING PASSED AS PROPS
@@ -145,8 +146,8 @@ function App() {
       />
       <PokemonCard
         isHomepage={isHomepage}
-        pokemon={pokemon}
-        pokemonDescription={pokemonDescription}
+        pokemon={pokemon.toUpperCase()}
+        pokemonDescription={pokemonDescription.replace("", " ")}
         pokemonHeightM={pokemonHeightM}
         pokemonImg={pokemonImg}
         pokemonNumber={pokemonNumber}

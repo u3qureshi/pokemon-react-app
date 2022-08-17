@@ -12,21 +12,35 @@ function PokemonCard({
   pokemonDescription,
   errorMessage,
 }) {
+  //metric conversions
+  let pokemonHeightFT = Math.round(pokemonHeightM * 3.281 * 10) / 10;
+  let pokemonWeightLBS = Math.round(pokemonWeightKG * 2.205 * 10) / 10;
+
   if (isHomepage) return <div></div>;
   else {
     if (!errorMessage == "") {
-      return <div>{errorMessage}</div>;
+      return <div className="error-div">{errorMessage}</div>;
     } else {
       return (
         <div className="card-container">
-          <img src={pokemonImg} />
           <div className="grid-container">
-            <div>#{pokemonNumber}</div>
-            <div>{pokemon}</div>
-            <div>{pokemonType}</div>
-            <div>{pokemonHeightM} m</div>
-            <div>{pokemonWeightKG} kg</div>
-            <div>{pokemonDescription}</div>
+            <div className="number">#{pokemonNumber}</div>
+            <div className="type">{pokemonType}</div>
+            <div className="height">
+              HEIGHT: {pokemonHeightM} m {"("}
+              {pokemonHeightFT}
+              {" ft)"}
+            </div>
+            <div className="weight">
+              WEIGHT: {pokemonWeightKG} kg {"("}
+              {pokemonWeightLBS}
+              {" lbs)"}
+            </div>
+            <div className="description">{pokemonDescription}</div>
+          </div>
+          <div className="right-div">
+            <img src={pokemonImg} />
+            <div className="name">{pokemon}</div>
           </div>
         </div>
       );

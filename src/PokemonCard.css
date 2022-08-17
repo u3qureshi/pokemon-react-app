@@ -1,0 +1,78 @@
+.card-container {
+  font-family: "Titillium Web", "raleway", sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+.card-container img {
+  width: 21vw;
+  height: 21vw;
+  margin-top: -17vw;
+  margin-right: 5vw;
+  background: rgba(71, 71, 71, 0.7);
+  padding: 3vw;
+  border-radius: 2vw;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1vw;
+  background: rgba(71, 71, 71, 0.9);
+  margin-left: 5vw;
+  margin-right: 5vw;
+  padding: 2vw;
+  border-radius: 2vw;
+}
+.grid-container div {
+  text-align: center;
+}
+.grid-container .number {
+  color: white;
+  font-size: 3.5vw;
+  font-weight: 800;
+}
+.right-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.right-div .name {
+  background: rgba(71, 71, 71, 0.9);
+  padding: 3vw;
+  padding-block: 1.7vw;
+  margin-top: 1vw;
+  border-radius: 1vw;
+  align-self: center;
+  color: white;
+  font-size: 3.7vw;
+  margin-right: 5vw;
+  min-width: 21vw;
+  max-width: 25vw;
+  text-align: center;
+  font-weight: 900;
+}
+.grid-container .type {
+  color: white;
+  font-size: 2.7vw;
+}
+.grid-container .weight {
+  color: white;
+  font-size: 2vw;
+}
+.grid-container .height {
+  color: white;
+  font-size: 2vw;
+}
+.grid-container .description {
+  color: white;
+  font-size: 2vw;
+}
+.error-div {
+  background: rgba(71, 71, 71, 0.9);
+  margin: 5vw;
+  padding: 2vw;
+  border-radius: 2vw;
+  text-align: center;
+  font-size: 3vw;
+  color: red;
+  font-weight: 900;
+}

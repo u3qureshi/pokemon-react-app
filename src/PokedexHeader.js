@@ -1,13 +1,18 @@
 import React from "react";
 import "./PokedexHeader.css";
 
-function PokedexHeader() {
+function PokedexHeader({ setIsHomepage }) {
+  function handleClick() {
+    setIsHomepage(true);
+  }
   return (
     <header>
       <div id="skew">
         <div className="text">
           <img src={require("./images/blue-circle.png")} />
-          <span>PoKéDeX</span>
+          <span onClick={handleClick} className="title">
+            PoKéDeX
+          </span>
         </div>
       </div>
     </header>

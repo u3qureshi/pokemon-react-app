@@ -7,7 +7,7 @@
   src: url(fonts/PokemonSolid.ttf) format("truetype");
 }
 header {
-  height: 25vw;
+  height: 20vw;
 }
 
 #skew {
@@ -33,7 +33,7 @@ header {
   box-shadow: -5px 3px 32px 4px lightyellow;
 }
 .text {
-  margin-top: 3vw;
+  margin-top: 0vw;
 }
 .text span {
   font-family: pokefont;
@@ -42,6 +42,9 @@ header {
   font-size: 7vw;
   letter-spacing: 0.3vw;
   text-shadow: 0.7vw 0.5vw 0 rgb(0, 0, 158);
+}
+.text span:hover {
+  cursor: pointer;
 }
 .text img {
   height: 13vw;
