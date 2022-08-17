@@ -9,6 +9,10 @@ html {
 * {
   font-family: "Raleway", sans-serif;
 }
+@font-face {
+  font-family: "pokefont";
+  src: url(fonts/PokemonSolid.ttf) format("truetype");
+}
 body {
   background-color: transparent;
 }
@@ -66,4 +70,27 @@ form button:hover {
   font-size: 3vw;
   color: white;
   font-weight: 900;
+}
+.subtext {
+  font-size: 1.9vw;
+  overflow: hidden;
+  transform: skewY(-12deg);
+  transform-origin: 0;
+  max-width: 45vw;
+  margin-inline: 10vw;
+  margin-left: 17vw;
+  margin-top: -3vw;
+  margin-bottom: 3vw;
+  color: black;
+  background: rgba(255, 255, 255, 0.32);
+  text-align: center;
+  border-radius: 1vw;
+  padding: 0.3vw;
+}
+.subtext span {
+  font-family: pokefont, "raleway", sans-serif;
+  line-height: 0;
+  color: yellow;
+  letter-spacing: 0.1vw;
+  -webkit-text-stroke: 0.12vw blue;
 }

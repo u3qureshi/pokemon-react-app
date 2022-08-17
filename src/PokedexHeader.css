@@ -31,6 +31,8 @@ header {
   -webkit-box-shadow: -5px 3px 32px 4px lightyellow;
   -moz-box-shadow: -5px 3px 32px 4px lightyellow;
   box-shadow: -5px 3px 32px 4px lightyellow;
+  display: flex;
+  flex-direction: column;
 }
 .text {
   margin-top: 0vw;
@@ -41,7 +43,7 @@ header {
   color: yellow;
   font-size: 7vw;
   letter-spacing: 0.3vw;
-  text-shadow: 0.7vw 0.5vw 0 rgb(0, 0, 158);
+  text-shadow: 0.7vw 0.6vw 0 rgb(0, 0, 197);
 }
 .text span:hover {
   cursor: pointer;

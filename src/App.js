@@ -33,6 +33,8 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [tempName, setTempName] = useState("");
   const [finalName, setFinalName] = useState("");
+  // If a number is used to search for a pokemon, this variable is used to store the actual pokemon name
+  const [numToName, setNumToName] = useState("");
 
   /** SECTION FOR THE SECOND API CALL FOR A SPECIFIC POKEMON */
   useEffect(() => {
@@ -56,6 +58,11 @@ function App() {
         setTimeout(() => {
           document.querySelector("#query").style.border = "1.5px solid yellow";
         }, 1700);
+
+        // Check if the pokemons finalName is a number
+        if (!isNaN(pokemon)) {
+          setFinalName(res.data.name);
+        }
       })
       .catch((error) => {
         setErrorMessage("Please enter a correct Pokémon name.");
@@ -161,6 +168,10 @@ function App() {
         setIsHomepage={setIsHomepage}
         isHomepage={isHomepage}
       />
+      <div className="subtext">
+        There are 905 <span>PoKéMoN</span>. Search for one by name or using its
+        National Pokédex number!
+      </div>
       <PokemonList
         setPokemon={setPokemon}
         pokemonNames={pokemonNames}
