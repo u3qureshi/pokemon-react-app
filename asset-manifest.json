@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.80e607aa.css",
-    "main.js": "/react-gh-pages/static/js/main.f87c24cc.js",
-    "static/media/blue-circle.png": "/react-gh-pages/static/media/blue-circle.179dacf3f21c28cd26d8.png",
-    "static/media/PokemonSolid.ttf": "/react-gh-pages/static/media/PokemonSolid.5d60be1f7ff5fcc21fc1.ttf",
-    "static/media/background.webp": "/react-gh-pages/static/media/background.e867965ff6bf8c7bc515.webp",
-    "index.html": "/react-gh-pages/index.html",
-    "main.80e607aa.css.map": "/react-gh-pages/static/css/main.80e607aa.css.map",
-    "main.f87c24cc.js.map": "/react-gh-pages/static/js/main.f87c24cc.js.map"
+    "main.css": "/static/css/main.4a24baff.css",
+    "main.js": "/static/js/main.268cc53d.js",
+    "static/media/blue-circle.png": "/static/media/blue-circle.179dacf3f21c28cd26d8.png",
+    "static/media/PokemonSolid.ttf": "/static/media/PokemonSolid.5d60be1f7ff5fcc21fc1.ttf",
+    "static/media/background.webp": "/static/media/background.e867965ff6bf8c7bc515.webp",
+    "index.html": "/index.html",
+    "main.4a24baff.css.map": "/static/css/main.4a24baff.css.map",
+    "main.268cc53d.js.map": "/static/js/main.268cc53d.js.map"
   },
   "entrypoints": [
-    "static/css/main.80e607aa.css",
-    "static/js/main.f87c24cc.js"
+    "static/css/main.4a24baff.css",
+    "static/js/main.268cc53d.js"
   ]
 }
