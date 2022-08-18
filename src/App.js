@@ -26,7 +26,7 @@ function App() {
   // These 3 state variables are for the second API call for a specific pokemon
   const [pokemon, setPokemon] = useState("");
   const [pokemonHeightM, setPokemonHeightM] = useState("");
-  const [pokemonType, setPokemonType] = useState("");
+  const [pokemonType, setPokemonType] = useState([]);
   const [pokemonWeightKG, setPokemonWeightKG] = useState("");
   const [pokemonImg, setPokemonImg] = useState("");
   const [pokemonNumber, setPokemonNumber] = useState("");
@@ -50,7 +50,7 @@ function App() {
         setPokemonType(res.data.types[0].type.name);
         setPokemonHeightM(res.data.height / 10);
         setPokemonWeightKG(res.data.weight / 10);
-        setPokemonType(getTypes(res.data.types));
+        setPokemonType(getTypesArray(res.data.types));
         setPokemonImg(res.data.sprites.other.dream_world.front_default);
         setPokemonNumber(String(res.data.id).padStart(3, "0"));
         setNextPokemonNumber(res.data.id + 1);
@@ -107,13 +107,13 @@ function App() {
     return () => cancel();
   }, [pokemon]);
 
-  function getTypes(typesArray) {
+  function getTypesArray(typesArray) {
     let newTypesArray = [];
     typesArray.forEach((element) => {
-      newTypesArray.push(element.type.name);
+      newTypesArray.push(element.type.name.toUpperCase());
     });
 
-    return newTypesArray.join(", ").toUpperCase();
+    return newTypesArray;
   }
 
   const handleChange = (e) => {

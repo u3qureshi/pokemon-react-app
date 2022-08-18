@@ -50,14 +50,14 @@ function PokemonList({ setIsHomepage, pokemonNames, isHomepage, setPokemon }) {
             className="pokeball"
             src={require("./images/ball.png")}
           />
-          <span class="tooltiptext">
+          <span className="tooltiptext">
             Random <span>PoKéMoN</span>
           </span>
         </div>
 
         <div className="pokemonNamesContainer">
           {pokemonNames.map((p) => (
-            <div onClick={handleClick} className="pokemonNames">
+            <div key={p.name} onClick={handleClick} className="pokemonNames">
               {p.name.toUpperCase()}
             </div>
           ))}
