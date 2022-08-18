@@ -27,8 +27,9 @@
 }
 .grid-container .number {
   color: white;
-  font-size: 3.5vw;
-  font-weight: 800;
+  font-size: 4.1vw;
+  font-weight: 700;
+  font-family: "Courier New", Courier, monospace;
 }
 .right-div {
   display: flex;

@@ -5,6 +5,7 @@ import axios from "axios";
 import "./App.css";
 import PokedexHeader from "./PokedexHeader";
 import PokemonCard from "./PokemonCard";
+import PokemonCardFooter from "./PokemonCardFooter";
 
 function App() {
   const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
@@ -33,8 +34,10 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [tempName, setTempName] = useState("");
   const [finalName, setFinalName] = useState("");
-  // If a number is used to search for a pokemon, this variable is used to store the actual pokemon name
-  const [numToName, setNumToName] = useState("");
+
+  // Variables for the next and previous pokemon in the list
+  const [nextPokemonNumber, setNextPokemonNumber] = useState();
+  const [previousPokemonNumber, setPreviousPokemonNumber] = useState();
 
   /** SECTION FOR THE SECOND API CALL FOR A SPECIFIC POKEMON */
   useEffect(() => {
@@ -50,6 +53,8 @@ function App() {
         setPokemonType(getTypes(res.data.types));
         setPokemonImg(res.data.sprites.other.dream_world.front_default);
         setPokemonNumber(String(res.data.id).padStart(3, "0"));
+        setNextPokemonNumber(res.data.id + 1);
+        setPreviousPokemonNumber(res.data.id - 1);
         setErrorMessage("");
         setFinalName(pokemon);
         // change border color after successful query
@@ -76,7 +81,7 @@ function App() {
         cancelToken: new axios.CancelToken((c) => (cancel = c)),
       })
       .then((res) => {
-        let description = res.data.flavor_text_entries[0].flavor_text;
+        let description = res.data.flavor_text_entries[1].flavor_text;
         setPokemonDescription(description);
       });
     return () => cancel();
@@ -169,7 +174,7 @@ function App() {
         isHomepage={isHomepage}
       />
       <div className="subtext">
-        There are 905 <span>PoKéMoN</span>. Search for one by name or using its
+        There are 905 <span>PoKéMoN</span>™. Search for one by name or using its
         National Pokédex number!
       </div>
       <PokemonList
@@ -196,6 +201,12 @@ function App() {
         pokemonWeightKG={pokemonWeightKG}
         errorMessage={errorMessage}
         pokemon={finalName.toUpperCase()}
+      />
+      <PokemonCardFooter
+        isHomepage={isHomepage}
+        nextPokemonNumber={nextPokemonNumber}
+        previousPokemonNumber={previousPokemonNumber}
+        setPokemon={setPokemon}
       />
     </div>
   );

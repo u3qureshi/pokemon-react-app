@@ -37,3 +37,46 @@
   display: grid;
   grid-template-columns: auto auto;
 }
+.pokeball {
+  position: absolute;
+  width: 11vw;
+  height: auto;
+  right: 0;
+  margin: 9vw;
+  margin-top: -16vw;
+  border-radius: 50%;
+}
+.pokeball:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.75);
+  transition: all 100ms ease;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  font-size: 2.2vw;
+  background: rgba(255, 255, 255, 0.75);
+  color: black;
+  text-align: center;
+  padding: 0.6vw;
+  border-radius: 1vw;
+  position: absolute;
+  right: 0;
+  margin: 5vw;
+  margin-top: -4.8vw;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  transition: all 100ms ease-in-out;
+  font-weight: 900;
+}
+.tooltiptext span {
+  font-family: pokefont, "raleway";
+  line-height: 0;
+  font-weight: 100;
+  letter-spacing: 0.1vw;
+}

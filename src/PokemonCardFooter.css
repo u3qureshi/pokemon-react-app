@@ -1,0 +1,48 @@
+.card-button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 5vw;
+  margin-top: 1vw;
+}
+.card-button-container button {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3vw;
+  font-weight: 900;
+  padding: 0.7vw;
+  border-radius: 1vw;
+  background: rgb(255, 57, 57);
+  color: white;
+  border: 0.2vw solid red;
+}
+.card-button-container .right {
+  background: rgb(255, 5, 5);
+  background: linear-gradient(
+    270deg,
+    rgba(255, 5, 5, 1) 13%,
+    rgb(33, 33, 33) 19%,
+    rgb(100, 100, 100) 92%
+  );
+  padding-right: 3vw;
+}
+.card-button-container .left {
+  background: rgb(255, 5, 5);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 5, 5, 1) 13%,
+    rgb(33, 33, 33) 19%,
+    rgb(100, 100, 100) 92%
+  );
+  padding-left: 3vw;
+}
+.card-button-container button:hover {
+  cursor: pointer;
+  border: 0.2vw solid yellowgreen;
+  transition: all 200ms ease;
+}
+.card-button-container button:disabled:hover {
+  cursor: default;
+  border: 0.2vw solid red;
+}
+.card-button-container button:disabled {
+  opacity: 0.5;
+}
