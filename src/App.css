@@ -73,6 +73,7 @@ form button:hover {
 }
 .subtext {
   font-size: 1.9vw;
+  font-weight: 400;
   overflow: hidden;
   transform: skewY(-12deg);
   transform-origin: 0;
@@ -89,6 +90,7 @@ form button:hover {
 }
 .subtext span {
   font-family: pokefont, "raleway", sans-serif;
+  font-weight: 100;
   line-height: 0;
   color: yellow;
   letter-spacing: 0.1vw;

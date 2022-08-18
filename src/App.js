@@ -68,6 +68,13 @@ function App() {
         if (!isNaN(pokemon)) {
           setFinalName(res.data.name);
         }
+        let tempImg = res.data.sprites.other.dream_world.front_default;
+        //Check if the img is null, if so change the sprite to official artwork
+        if (tempImg == null) {
+          setPokemonImg(
+            res.data.sprites.other["official-artwork"].front_default
+          );
+        }
       })
       .catch((error) => {
         setErrorMessage("Please enter a correct Pokémon name.");
@@ -83,7 +90,20 @@ function App() {
       .then((res) => {
         let description = res.data.flavor_text_entries[1].flavor_text;
         setPokemonDescription(description);
+
+        // The position of the languages of the description are not consistent in the array
+        // Check if the language of the description is not english
+        let tempLang = res.data.flavor_text_entries[1].language.name;
+        if (tempLang != "en") {
+          let desArray = res.data.flavor_text_entries;
+          desArray.forEach((element) => {
+            if (element.language.name == "en") {
+              setPokemonDescription(element.flavor_text);
+            }
+          });
+        }
       });
+
     return () => cancel();
   }, [pokemon]);
 
