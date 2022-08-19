@@ -96,3 +96,12 @@ form button:hover {
   letter-spacing: 0.1vw;
   -webkit-text-stroke: 0.12vw blue;
 }
+@media only screen and (max-device-width: 500px) {
+  form input {
+    font-size: 0.7rem;
+    padding: 1vw;
+  }
+  form button {
+    font-size: 0.4rem;
+  }
+}

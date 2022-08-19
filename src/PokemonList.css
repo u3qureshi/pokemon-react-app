@@ -8,8 +8,9 @@
 .pokemonNames {
   padding: 0.5vw;
   margin: 0.5vw;
-  width: 33vw;
+  min-width: 35vw;
   text-align: center;
+  vertical-align: middle;
   background: rgb(49, 49, 49);
   justify-self: center;
   align-self: center;
@@ -19,7 +20,7 @@
   font-family: pokefont, Arial;
   font-size: 2vw;
   font-weight: 100;
-  letter-spacing: 0.4vw;
+  letter-spacing: 0.55vw;
 }
 .pokemonNames:hover {
   background: rgb(140, 140, 140);
@@ -79,4 +80,15 @@
   line-height: 0;
   font-weight: 100;
   letter-spacing: 0.1vw;
+}
+@media only screen and (max-device-width: 500px) {
+  .pokemonNames {
+    font-size: 0.7rem;
+    margin: 1.2vw;
+    padding: 1vw;
+    padding-block: 1.3vw;
+  }
+  .pokemonNamesContainer {
+    margin-block: 6vw;
+  }
 }

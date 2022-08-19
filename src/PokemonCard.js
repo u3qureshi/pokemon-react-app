@@ -24,7 +24,7 @@ function PokemonCard({
         color = "beige";
         break;
       case "fire":
-        color = "orange";
+        color = "darkorange";
         break;
       case "water":
         color = "mediumblue";
@@ -42,7 +42,7 @@ function PokemonCard({
         color = "darkred";
         break;
       case "poison":
-        color = "rebeccapurple";
+        color = "indigo";
         break;
       case "ground":
         color = "saddlebrown";

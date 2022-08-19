@@ -46,3 +46,46 @@
 .card-button-container button:disabled {
   opacity: 0.5;
 }
+@media only screen and (max-device-width: 500px) {
+  .card-button-container {
+    margin-top: 5vw;
+  }
+  .card-button-container button {
+    font-size: 1.6rem;
+    padding: 1.7vw;
+    border-radius: 2vw;
+    margin-inline: 3vw;
+  }
+  .card-button-container .right {
+    padding-right: 6vw;
+  }
+  .card-button-container .left {
+    padding-left: 6vw;
+  }
+}
+@media only screen and (device-width: 768px) {
+  .card-button-container button {
+    font-size: 2rem;
+    padding: 2vw;
+    border-radius: 2vw;
+  }
+  .card-button-container .right {
+    padding-right: 5vw;
+  }
+  .card-button-container .left {
+    padding-left: 5vw;
+  }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .card-button-container button {
+    font-size: 2rem;
+    padding: 2vw;
+    border-radius: 2vw;
+  }
+  .card-button-container .right {
+    padding-right: 5vw;
+  }
+  .card-button-container .left {
+    padding-left: 5vw;
+  }
+}

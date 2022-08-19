@@ -148,3 +148,8 @@
   border: none;
   cursor: default;
 }
+@media only screen and (max-device-width: 500px) {
+  .button-container button {
+    font-size: 1rem;
+  }
+}
